@@ -18,3 +18,22 @@
 Module to encapsulate functionality related to writing to the tensorboard
 log dir and programmatically structure the outputs.
 """
+
+print("write 1337")
+
+import tensorflow.compat.v2 as tf
+from tensorboard.plugins.hparams import summary_v2 as hp
+from tensorboard.plugins.hparams import api_pb2
+from tensorboard.plugins.hparams import summary
+
+# __import__("tensorflow").compat.v1.enable_eager_execution()
+
+_tensorboard_dir = None
+_writer = None
+
+
+def _register(trial_dir):
+    global _tensorboard_dir
+    global _writer
+    _tensorboard_dir = trial_dir
+    _writer = tf.summary.create_file_writer(_tensorboard_dir)
