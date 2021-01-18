@@ -87,6 +87,7 @@ def _write_hparams_config(log_dir, searchspace):
     print("testard1")
     print("testard1")
     print("testard1")
+    print("isbroken?")
     HPARAMS = _create_hparams_config(searchspace)
     print("testard2")
     METRICS = [
