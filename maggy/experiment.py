@@ -140,15 +140,16 @@ def lagom(
 
         # start experiment driver
         if experiment_type == "optimization":
-
+            print("yolo1")
             assert num_trials > 0, "number of trials should be greater " + "than zero"
+            print("yolo2")
             tensorboard._write_hparams_config(
                 experiment_utils._get_logdir(app_id, run_id), searchspace
             )
 
             if num_executors > num_trials:
                 num_executors = num_trials
-
+            print("yolo3")
             exp_driver = optimization.Driver(
                 searchspace=searchspace,
                 optimizer=optimizer,
@@ -163,6 +164,7 @@ def lagom(
                 description=description,
                 log_dir=experiment_utils._get_logdir(app_id, run_id),
             )
+            print("yolo4")
 
         elif experiment_type == "ablation":
             exp_driver = ablation.Driver(
