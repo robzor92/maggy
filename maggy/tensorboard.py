@@ -83,19 +83,19 @@ def _create_hparams_config(searchspace):
 
 def _write_hparams_config(log_dir, searchspace):
     print("write 1")
-    HPARAMS = _create_hparams_config(searchspace)
+    #HPARAMS = _create_hparams_config(searchspace)
     print("write 2")
-    METRICS = [
-        hp.Metric(
-            "epoch_accuracy", group="validation", display_name="accuracy (val.)",
-        ),
-        hp.Metric("epoch_loss", group="validation", display_name="loss (val.)",),
-        hp.Metric("epoch_accuracy", group="train", display_name="accuracy (train)",),
-        hp.Metric("epoch_loss", group="train", display_name="loss (train)",),
-    ]
+    #METRICS = [
+    #    hp.Metric(
+    #        "epoch_accuracy", group="validation", display_name="accuracy (val.)",
+    #    ),
+    #    hp.Metric("epoch_loss", group="validation", display_name="loss (val.)",),
+    #    hp.Metric("epoch_accuracy", group="train", display_name="accuracy (train)",),
+    #    hp.Metric("epoch_loss", group="train", display_name="loss (train)",),
+    #]
     print("write 3")
-    with tf.summary.create_file_writer(log_dir).as_default():
-        hp.hparams_config(hparams=HPARAMS, metrics=METRICS)
+    #with tf.summary.create_file_writer(log_dir).as_default():
+    #    hp.hparams_config(hparams=HPARAMS, metrics=METRICS)
     print("write 4")
 
 def _write_hparams(hparams, trial_id):
