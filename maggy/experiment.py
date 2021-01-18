@@ -259,6 +259,7 @@ def lagom(
         return result
 
     except:  # noqa: E722
+        print("exceptionzz")
         _exception_handler(
             experiment_utils._seconds_to_milliseconds(time.time() - job_start)
         )
