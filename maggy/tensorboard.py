@@ -19,6 +19,8 @@ Module to encapsulate functionality related to writing to the tensorboard
 log dir and programmatically structure the outputs.
 """
 
+print("write 1337")
+
 import tensorflow.compat.v2 as tf
 from tensorboard.plugins.hparams import summary_v2 as hp
 from tensorboard.plugins.hparams import api_pb2
