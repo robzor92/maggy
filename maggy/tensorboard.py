@@ -90,8 +90,8 @@ def _write_hparams_config(log_dir, searchspace):
         hp.Metric("epoch_loss", group="train", display_name="loss (train)",),
     ]
 
-    with tf.summary.create_file_writer(log_dir).as_default():
-        hp.hparams_config(hparams=HPARAMS, metrics=METRICS)
+    #with tf.summary.create_file_writer(log_dir).as_default():
+    #    hp.hparams_config(hparams=HPARAMS, metrics=METRICS)
 
 
 def _write_hparams(hparams, trial_id):
